@@ -38,18 +38,72 @@
 #include <stdint.h>
 
 //Defines for given ADC Sampling Frequency and System Clock
-#define ADC_SAMPLING_FREQ       	(96000)
-#define SYSTEM_CLOCK                (48e6)
+#define ADC_SAMPLING_FREQ       	(96000)					//ADC Sampling frequency 96KHz
+#define SYSTEM_CLOCK                (48e6)					//Clock Frequency 48MHz
 
-
+/*************************************************************************************************************
+ *
+ * Name :		  	void Init_ADC()
+ *
+ *
+ *
+ * Description :	This function initializes the ADC
+ * It defines all the control and status registers as required - sampling, scanning, mode, electrode voltage
+ *
+ * Inputs: NONE
+ *
+ * Return: NONE
+ *************************************************************************************************************/
 void Init_ADC();
 
-
+/*************************************************************************************************************
+ *
+ * Name :		  	void Init_TPM1()
+ *
+ *
+ *
+ * Description :	This function initializes the Timer 1
+ *
+ * Inputs: NONE
+ *
+ * Return: NONE
+ *************************************************************************************************************/
 void Init_TPM1();
 
 
+/*************************************************************************************************************
+ *
+ * Name :		  	void ADC_Data(uint16_t *buffer, uint32_t sample)
+ *
+ *
+ *
+ * Description :	This function reads the DAC output data into the buffer
+ * It reads until the conversion is complete
+ *
+ * Inputs:
+ * *buffer Pointer to buffer array - Input ADC Buffer
+ * sample Total number of bytes
+ *
+ * Return: NONE
+ *************************************************************************************************************/
 void ADC_Data(uint16_t *buffer, uint32_t sample);
 
+
+/*************************************************************************************************************
+ *
+ * Name :		  	void analysis(uint16_t *input_buffer, uint32_t adc_samples)
+ *
+ *
+ *
+ * Description :	This function processes ADC Input buffer and gives the analysis
+ *
+ * Inputs:
+ * *input_buffer Pointer to buffer array - Input ADC Buffer
+ * samples Total number of bytes
+ *
+ *
+ * Return: NONE
+ *************************************************************************************************************/
 void analysis(uint16_t *input_buffer, uint32_t adc_samples);
 
 #endif /* ADC_H_ */

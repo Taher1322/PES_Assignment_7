@@ -30,6 +30,19 @@
 #ifndef TEST_SIN_H_
 #define TEST_SIN_H_
 
+/*************************************************************************************************************
+ *
+ * Name :		  	void test_sin()
+ *
+ *
+ *
+ * Description :	This function compares the computer sine wave with library sine wave and gives the total error
+ *
+ * Inputs: NONE
+ *
+ *
+ * Return: NONE
+ *************************************************************************************************************/
 void test_sin();
 
 #endif /* TEST_SIN_H_ */

@@ -32,17 +32,48 @@
 #ifndef FP_SIN_H_
 #define FP_SIN_H_
 
+//Including the header file
 #include <stdint.h>
 
-
+//References of Macros taken from Howdy Lecture
 #define TRIG_SCALE_FACTOR	(2037)
 #define HALF_PI				(3200)
 #define PI 					(6399)
 #define TWO_PI				(12799)
 
+
+/*************************************************************************************************************
+ *
+ * Name :		  	int32_t fp_sin(int32_t x)
+ *
+ *
+ *
+ * Description :	This function takes x in radians and computes the corresponding sine wave
+ *
+ * Inputs: int32_t x - Angle in Radian
+ *
+ *
+ * Return: NONE
+ *************************************************************************************************************/
 int32_t fp_sin(int32_t x);
 
-
+/*************************************************************************************************************
+ *
+ * Name :		  	interpolate(int32_t x, int32_t x1, int32_t y1, int32_t x2, int32_t y2)
+ *
+ *
+ *
+ *
+ * Description :	This function computes the midpoint from 2 given points
+ *
+ *
+ * Inputs:
+ * Point 1 -- int32_t x1, int32_t y1 : (x1,y1) one of the points on the sine wave
+ * Point 2 -- int32_t x2, int32_t y2 : (x2,y2) one of the other point on the sine wave
+ * int32_t x0 -- Middle point x co-ordinate
+ *
+ * Return: Y-co-ordinate value in integer
+ *************************************************************************************************************/
 int32_t interpolate(int32_t x, int32_t x1, int32_t y1, int32_t x2, int32_t y2);
 
 #endif /* FP_SIN_H_ */

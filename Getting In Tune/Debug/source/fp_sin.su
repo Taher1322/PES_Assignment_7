@@ -1,2 +1,2 @@
-fp_sin.c:58:9:fp_sin	56	static
-fp_sin.c:102:9:interpolate	24	static
+fp_sin.c:57:9:fp_sin	56	static
+fp_sin.c:107:9:interpolate	24	static

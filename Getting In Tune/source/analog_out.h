@@ -35,6 +35,23 @@
 
 #define BUFFER_SIZE 		(1024)
 
+
+/*************************************************************************************************************
+ *
+ * Name :		  	size_t tone_to_samples(int input_freq, uint16_t *buffer, int size)
+ *
+ *
+ *
+ * Description :	This function processes pure frequency tone into samples and computes sine wave using integer mathematics and lookup table
+ *
+ * Inputs:
+ *	input_freq Pure Frequency Tone
+ * *buffer Pointer to buffer array - DAC Buffer
+ * size Total number of bytes
+ *
+ *
+ * Return: sample
+ *************************************************************************************************************/
 size_t tone_to_samples(int input_freq, uint16_t *buffer, int size);
 
 #endif /* ANALOG_OUT_H_ */

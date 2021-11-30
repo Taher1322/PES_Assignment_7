@@ -46,11 +46,14 @@ size_t tone_to_samples(int tone_freq, uint16_t *buffer, int size)
 {
 
 	int i=0;
+	//Calculating the period and total iterations
 	int period = ((DAC_SAMPLING_FREQ + (tone_freq/2)) / tone_freq);
 	int total_iterations = size/period;
 	int sample = period*total_iterations;
 
-	for (i=0; i < sample; i++) {
+	//Computing the Sine Wave using Lookup Table and Integers Mathematics
+	for (i=0; i < sample; i++)
+	{
 		buffer[i] = fp_sin(i * TWO_PI / period) + TRIG_SCALE_FACTOR;
 	}
 
@@ -58,5 +61,5 @@ size_t tone_to_samples(int tone_freq, uint16_t *buffer, int size)
 			sample, tone_freq, ((DAC_SAMPLING_FREQ + (tone_freq/2)) / tone_freq),
 			autocorrelate_detect_period(buffer, sample, 0));
 
-	   return sample;
+	return sample;
 }

@@ -3360,29 +3360,29 @@ OUTPUT(Getting In Tune.axf elf32-littlearm)
  .debug_macro   0x0000937a       0x10 ./board/pin_mux.o
  .debug_macro   0x0000938a       0x94 ./CMSIS/system_MKL25Z4.o
 
-.debug_line     0x00000000     0x7548
+.debug_line     0x00000000     0x7546
  .debug_line    0x00000000      0xc72 ./utilities/fsl_debug_console.o
  .debug_line    0x00000c72      0x1e7 ./startup/startup_mkl25z4.o
  .debug_line    0x00000e59      0x4a2 ./source/adc.o
  .debug_line    0x000012fb      0x3ed ./source/analog_out.o
  .debug_line    0x000016e8      0x2b5 ./source/autocorrelate.o
  .debug_line    0x0000199d      0x417 ./source/dac.o
- .debug_line    0x00001db4      0x3f7 ./source/fp_sin.o
- .debug_line    0x000021ab      0x448 ./source/main.o
- .debug_line    0x000025f3       0xd1 ./source/mtb.o
- .debug_line    0x000026c4       0x59 ./source/semihost_hardfault.o
- .debug_line    0x0000271d      0x32c ./source/systick.o
- .debug_line    0x00002a49      0x399 ./source/test_sin.o
- .debug_line    0x00002de2     0x12ef ./drivers/fsl_clock.o
- .debug_line    0x000040d1      0x411 ./drivers/fsl_common.o
- .debug_line    0x000044e2      0x74e ./drivers/fsl_dma.o
- .debug_line    0x00004c30      0xd68 ./drivers/fsl_lpsci.o
- .debug_line    0x00005998      0xd57 ./drivers/fsl_uart.o
- .debug_line    0x000066ef      0x385 ./board/board.o
- .debug_line    0x00006a74      0x3df ./board/clock_config.o
- .debug_line    0x00006e53       0x5c ./board/peripherals.o
- .debug_line    0x00006eaf      0x366 ./board/pin_mux.o
- .debug_line    0x00007215      0x333 ./CMSIS/system_MKL25Z4.o
+ .debug_line    0x00001db4      0x3f5 ./source/fp_sin.o
+ .debug_line    0x000021a9      0x448 ./source/main.o
+ .debug_line    0x000025f1       0xd1 ./source/mtb.o
+ .debug_line    0x000026c2       0x59 ./source/semihost_hardfault.o
+ .debug_line    0x0000271b      0x32c ./source/systick.o
+ .debug_line    0x00002a47      0x399 ./source/test_sin.o
+ .debug_line    0x00002de0     0x12ef ./drivers/fsl_clock.o
+ .debug_line    0x000040cf      0x411 ./drivers/fsl_common.o
+ .debug_line    0x000044e0      0x74e ./drivers/fsl_dma.o
+ .debug_line    0x00004c2e      0xd68 ./drivers/fsl_lpsci.o
+ .debug_line    0x00005996      0xd57 ./drivers/fsl_uart.o
+ .debug_line    0x000066ed      0x385 ./board/board.o
+ .debug_line    0x00006a72      0x3df ./board/clock_config.o
+ .debug_line    0x00006e51       0x5c ./board/peripherals.o
+ .debug_line    0x00006ead      0x366 ./board/pin_mux.o
+ .debug_line    0x00007213      0x333 ./CMSIS/system_MKL25Z4.o
 
 .debug_str      0x00000000    0x36b68
  .debug_str     0x00000000    0x314c5 ./utilities/fsl_debug_console.o

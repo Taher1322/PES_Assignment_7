@@ -36,17 +36,16 @@
 #include <stdint.h>
 #include "assert.h"
 #include "fsl_debug_console.h"
-
 #include "adc.h"
 #include "dac.h"
 #include "autocorrelate.h"
 #include "systick.h"
 
-
+//Defining Macros to calculate Sine wave and Look Up table (Integer values)
 #define TRIG_TABLE_STEPS 							(32)
 #define TRIG_TABLE_STEP_SIZE 						(HALF_PI/TRIG_TABLE_STEPS)
 
-
+//Look Up Table to compute Sine Wave
 static const int16_t sin_lookup[TRIG_TABLE_STEPS+1] =
 {0, 100, 200, 299, 397, 495, 591, 686, 780, 871, 960, 1047,
 		1132, 1214, 1292, 1368, 1440, 1509, 1575, 1636, 1694, 1747,
@@ -54,28 +53,33 @@ static const int16_t sin_lookup[TRIG_TABLE_STEPS+1] =
 		2037};
 
 
-
+//Computes Sine Wave using Integer Mathematics and Look Up Table
 int32_t fp_sin(int32_t x)
 {
 	int32_t index;
 	int sign = 1;
 
 	//Checking the boundary for sine wave - x value within -PI to PI by wrapping it using 2 PI
-	  while (x < -PI){
-	    x += TWO_PI;
-	  }
-	  while (x > PI){
-	    x -= TWO_PI;
-	  }
+	 while (x < -PI)
+	 {
+		 x += TWO_PI;
+	 }
+
+	 while (x > PI)
+	 {
+		 x -= TWO_PI;
+	 }
 
 	  //sin(-x) = -sin(x)
-	  if (x < 0) {
-	    x = -x;
-	    sign = -1;
+	  if (x < 0)
+	  {
+		  x = -x;
+		  sign = -1;
 	  }
 
 	  //Making it within range 0 to +PI/2*/
-	  if (x > HALF_PI) {
+	  if (x > HALF_PI)
+	  {
 		  x = PI - x;
 	  }
 
@@ -99,6 +103,7 @@ int32_t fp_sin(int32_t x)
 }
 
 
+//This function is used to get the midpoint - Y cordinate between 2 points
 int32_t interpolate(int32_t x, int32_t x1, int32_t y1, int32_t x2, int32_t y2)
 {
   return ( (((x2 - x1)/2) + ((x - x1) * (y2 - y1))) / (x2 - x1) + y1);
