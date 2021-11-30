@@ -133,7 +133,7 @@ void analysis(uint16_t *input_buffer, uint32_t adc_samples)
 	}
 
 	int period = autocorrelate_detect_period(input_buffer, adc_samples, 1);
-	PRINTF("min = %u max = %u avg = %u period = %d frequency = %d Hz\r\n",
+	PRINTF("min=%u max=%u avg=%u period=%d frequency=%d Hz\r\n",
 			min, max, sum / adc_samples, period,  ADC_SAMPLING_FREQ / period);
 
 }

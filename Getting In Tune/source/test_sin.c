@@ -1,33 +1,32 @@
 /*****************************************************************************
-* Copyright (C) 2021 by Gaurang Rane
+* Copyright (C) 2021 by Taher Ujjainwala
 *
 * Redistribution, modification or use of this software in source or binary
 * forms is permitted as long as the files maintain this copyright. Users are
 * permitted to modify this and use it to learn about the field of embedded
-* software. Gaurang Rane and the University of Colorado are not liable for
+* software. Taher Ujjainwala and the University of Colorado are not liable for
 * any misuse of this material.
 *
 **************************************************************************/
-/*************************************************************************
+
+
+/*************************
  *
  *
  *
  *    File name   : test_sin.c
- *    Description : function declaration for test_sin function
+ *    Description : Generated the sine wave using Math Library and gives the errors with the Integer sine calculated
  *
- *    History :
- *    1. Date        : 30, Nov 2021
- *       Author      : Gaurang Rane
- *       Tools       : MCUXpresso IDE,GCC,PEMICRO-OPENSDA INTERFACE
- *       Description : function prototype is provided by Howdy Pierce
+ *    Author: TAHER S UJJAINWALA
+ * 	  Tools : MCUXpressor IDE
+ * 	  Reference: This code is provided by Howdy
  *
- *    $Revision: 100 $
- **************************************************************************/
+ *    Date  : 11/30/2021
+ *
+ *
+ */
 
-
-/*********************************************************************
- * Header File
- * *******************************************************************/
+//Including all the header files
 #include <stdio.h>
 #include "MKL25Z4.h"
 #include "fsl_debug_console.h"

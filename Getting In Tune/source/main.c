@@ -87,11 +87,17 @@ int main(void) {
 	BOARD_InitDebugConsole();
 #endif
 
+	//Initializing the Systick Timer
 	init_systick();
+	//Initializing Timer 0 - DAC
 	Init_TPM0();
+	//Initializing Direct Memory Access Peripheral
 	Init_DMA();
+	//Initializing Digital to Analog Converter Peripheral
 	Init_DAC();
+	//Initializing Timer 1 - ADC
 	Init_TPM1();
+	//Initializing Analog to Digital Peripheral
 	Init_ADC();
 
 	//Testing integer sine function for errors with inbuilt math function
@@ -99,12 +105,18 @@ int main(void) {
 	test_sin();
 	PRINTF("\r\n Errors computed \r\n");
 
+	//Defining Variables
 	int samples, i=0;
 	uint16_t DAC_BUFFER[BUFFER_SIZE], ADC_BUFFER[BUFFER_SIZE];
+	//Frequencies in Hz 440 --> A4
+	//587 Hz --> D5
+	//659 Hz --> E5
+	//and 880 Hz --> A5
 	int tone_freq[] = {440, 587, 659, 880};
 	reset_timer();
 	while(1)
 	{
+		//Checking if 1000ms is elapsed - Systick timer runs every 10ms
 		if(get_timer() >= 100)
 		{
 			i++;
@@ -117,10 +129,14 @@ int main(void) {
 			reset_timer();
 		}
 
+		//Calculating the samples
 		samples = tone_to_samples(tone_freq[i], DAC_BUFFER, BUFFER_SIZE);
+		//Feeding the samples to DAC System to generate waveform of the frequency
 		DAC_Data(DAC_BUFFER, samples);
 
+		//Reading the DAC output as ADC input
 		ADC_Data(ADC_BUFFER, BUFFER_SIZE);
+		//Analyse the Input waveform
 		analysis(ADC_BUFFER, BUFFER_SIZE);
 	}
 
