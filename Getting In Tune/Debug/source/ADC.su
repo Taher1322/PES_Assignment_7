@@ -1,0 +1,6 @@
+adc.c:43:6:Init_ADC	8	static
+adc.c:66:6:TMP1_Start	8	static
+adc.c:71:6:TMP1_Stop	8	static
+adc.c:77:6:Init_TPM1	8	static
+adc.c:95:6:ADC_Data	24	static
+adc.c:113:6:analysis	64	static
